@@ -1,0 +1,21 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom , black, #B6212B,  #D89322);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+ img {
+    width: 600px;
+    max-width: 100%;
+    max-height: 100%;
+}
