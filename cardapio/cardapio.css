@@ -1,7 +1,30 @@
-html, body{
+* {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html, body{
     background: linear-gradient(to bottom , black, #B6212B,  #D89322);
+}
+
+nav {
+    background-color: black;
+    height: 80px;
+    width: 100%;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav ul {
+    float: right;
+}   
+
+nav ul li {
+    color: white;
 }
 
 .container {
