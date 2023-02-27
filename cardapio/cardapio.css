@@ -27,12 +27,12 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: black;
-    height: 80px;
+    height: 60px;
     width: 100%;
 }
 
 .logo {
-    font-family: 'Signatra';
+    font-family: 'Signatra' ,'Roboto';
     font-size: 40px;
     color: #d8ae22;
 }
@@ -40,16 +40,19 @@ nav {
 nav ul {
     display: block;
     float: right;
+    margin: 0;
+    padding: 0;
 }   
 
 nav ul li {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 10px;
 }
 
 nav ul li a {
     display: inline-block;
     color: #d8ae22;
+    font-family: 'Roboto';
     font-weight: bold;
     text-decoration: none;
 }
