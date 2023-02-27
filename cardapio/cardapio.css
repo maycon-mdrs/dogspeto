@@ -5,26 +5,46 @@
     list-style: none;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'Signatra';
+    src: url('/fonts/Signatra.otf') format('opentype'), url('/fonts/Signatra.ttf') format('truetype');
+    font-weight: normal;
+}
 html, body{
     background: linear-gradient(to bottom , black, #B6212B,  #D89322);
 }
 
+.div-menu {
+    width: 600px;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
 nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: black;
     height: 80px;
     width: 100%;
 }
 
-.logo img {
-    width: 100px;
+.logo {
+    font-family: 'Signatra';
+    font-size: 40px;
+    color: #d8ae22;
 }
 
 nav ul {
+    display: block;
     float: right;
 }   
 
 nav ul li {
-    color: white;
+    color: #d8ae22;
+    font-weight: bold;
 }
 
 .container {
