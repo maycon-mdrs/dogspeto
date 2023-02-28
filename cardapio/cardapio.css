@@ -1,14 +1,14 @@
+@font-face {
+    font-family: 'Signatra';
+    src: url('/fonts/Signatra.otf') format('opentype'), url('/fonts/Signatra.ttf') format('truetype');
+    font-weight: normal;
+}
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-}
-@font-face {
-    font-family: 'Signatra';
-    src: url('/fonts/Signatra.otf') format('opentype'), url('/fonts/Signatra.ttf') format('truetype');
-    font-weight: normal;
 }
 html, body{
     background: linear-gradient(to bottom , black, #B6212B,  #D89322);
@@ -31,6 +31,7 @@ nav {
     width: 100%;
 }
 
+/* LOGO - TEXT */
 .logo {
     font-family: 'Signatra' ,'Roboto';
     font-size: 40px;
@@ -38,15 +39,21 @@ nav {
 }
 
 nav ul {
-    display: block;
-    float: right;
+    display: flex;
+    justify-content: right;
     margin: 0;
     padding: 0;
 }   
 
 nav ul li {
-    display: inline-block;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    padding: 5px;
+    margin: 5px;
+    background-color: transparent;
+	border: 2px solid #d8ae22;
+    border-radius: 20px;
 }
 
 nav ul li a {
@@ -55,6 +62,10 @@ nav ul li a {
     font-family: 'Roboto';
     font-weight: bold;
     text-decoration: none;
+}
+
+a:hover {
+    color:#B6212B;
 }
 
 .container {
@@ -67,7 +78,7 @@ nav ul li a {
     justify-content: center;
 }
 
- img {
+.pages {
     width: 600px;
     max-width: 100%;
     max-height: 100%;
@@ -75,8 +86,14 @@ nav ul li a {
 
 @media (max-width: 350px) {
     nav ul li {
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        width: 55px;
         padding: 5px;
+        margin: 5px;
+        background-color: transparent;
+        border: 2px solid #d8ae22;
+        border-radius: 20px;
     }
     nav ul li a {
         display: inline-block;
