@@ -1,0 +1,95 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.1em;
+    margin: 0;
+    padding: 0;
+}
+
+/* https://stackoverflow.com/questions/29147806/how-can-i-set-the-image-opacity-for-body-background */
+body::after {
+    content: "";
+    background: url("/images/fundo-b.png");
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y;
+
+}
+
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-header, .container-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#produtos {
+    width: 800px;
+}
+
+.img-produto {
+    background-image: url("/cardapio/produtos/combo.jpg");
+    background-size: 120px;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    float: left;
+}
+
+
+/* https://www.youtube.com/watch?v=4qnWreynXLU */
+/* https://www.youtube.com/watch?v=dPLHi7tsoFU */
+.accordion .contentBx {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.accordion .contentBx .label {
+    position: relative;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.accordion .contentBx .label::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+.accordion .contentBx.active .label::before {
+    content: '–';
+}
+
+.accordion .contentBx .content {
+    position: relative;
+    background-color: white;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    /*overflow-y: auto; */
+}
+
+.accordion .contentBx.active .content {
+    height: auto;
+    padding: 10px;
+}
+
+@media (max-width: 375px) {
+    
+}
