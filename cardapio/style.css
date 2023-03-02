@@ -19,35 +19,40 @@ body::after {
     background-size: cover;
     background-repeat: no-repeat;
     background-repeat: repeat-y;
-
 }
-
-
-main .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.container-header, .container-section {
+.main-text {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#produtos {
+.container-header, .container-section {
+    display: flex;
+    justify-content: center;
+}
+.logo {
+    width: 235px;
+    height: 198px;
+    margin: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.accordion {
     width: 800px;
+    display: flex;
+    justify-content: center;
 }
 
 .img-produto {
     background-image: url("/cardapio/produtos/combo.jpg");
     background-size: 120px;
+    background-position: center;
     width: 120px;
     height: 120px;
-    margin: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
     float: left;
 }
-
 
 /* https://www.youtube.com/watch?v=4qnWreynXLU */
 /* https://www.youtube.com/watch?v=dPLHi7tsoFU */
@@ -62,6 +67,7 @@ main .container {
     background-color: white;
     color: black;
     cursor: pointer;
+    border-top: 2px solid black;
 }
 
 .accordion .contentBx .label::before {
@@ -84,12 +90,43 @@ main .container {
     transition: 0.5s;
     /*overflow-y: auto; */
 }
+.accordion .contentBx .content p {
+    margin-top: 5px;
+    text-align: justify;
+}
+.h6, .h7 {
+    font-weight: bold;
+    margin-top: 5px;
+}
 
 .accordion .contentBx.active .content {
     height: auto;
+    border-bottom: 1px solid grey;
     padding: 10px;
 }
 
-@media (max-width: 375px) {
-    
+button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #B6212B; 
+    border-radius: 10px;
+    border-style: none;
+    width: 200px;
+    height: 40px;
+
+    margin: 10px;
+    padding: 10px;
+
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+@media (max-width: 800px) {
+    .accordion {
+        width: 365px;
+        display: flex;
+        justify-content: center;
+    }
 }
