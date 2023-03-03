@@ -236,13 +236,18 @@
     </footer>
 
     <script>
-        const accordion = document.getElementsByClassName('contentBx');
+        const accordion = document.querySelectorAll('.contentBx') ; 
+        const text = document.querySelectorAll('content');
+    
 
-        for(i=0; i<accordion.length; i++) {
-            accordion[i].addEventListener('click', function() {
-                this.classList.toggle('active');
+        accordion.forEach(acc => {
+            acc.addEventListener('click', function(){
+                this.classList.toggle('active'); 
+                const label = acc.nextElementSibling;
+                console.log(label);
             })
-        }
+        })
+
     </script>
 </body>
 </html>
