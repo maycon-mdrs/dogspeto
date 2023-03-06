@@ -105,6 +105,13 @@ body::after {
     padding: 10px;
 }
 
+#horario a {
+    text-decoration: none;
+}
+#horario a button span {
+    color: white;
+    font-weight: bold;
+}
 button {
     position: relative;
     display: flex;
@@ -114,7 +121,7 @@ button {
     background-color: #6AE35F; 
     border-radius: 10px;
     border-style: none;
-    width: 200px;
+    width: 180px;
     height: 40px;
 
     margin: 10px;
@@ -128,5 +135,9 @@ button {
         width: 365px;
         display: flex;
         justify-content: center;
+    }
+    button {
+        width: 150px;
+        height: 35px;
     }
 }
