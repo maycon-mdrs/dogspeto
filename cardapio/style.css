@@ -99,11 +99,11 @@ body::after {
     margin-top: 5px;
 }
 
-/* .accordion .contentBx.active .content {
+.accordion .contentBx .content.active {
     height: auto;
     border-bottom: 1px solid grey;
     padding: 10px;
-} */
+} 
 
 #horario a {
     text-decoration: none;
