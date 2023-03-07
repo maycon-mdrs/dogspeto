@@ -78,7 +78,7 @@ body::after {
     transform: translateY(-50%);
     font-size: 1.5em;
 }
-.accordion .contentBx.active .label::before {
+.accordion .contentBx .label.active::before {
     content: '–';
 }
 
@@ -99,11 +99,11 @@ body::after {
     margin-top: 5px;
 }
 
-.accordion .contentBx.active .content {
+/* .accordion .contentBx.active .content {
     height: auto;
     border-bottom: 1px solid grey;
     padding: 10px;
-}
+} */
 
 #horario a {
     text-decoration: none;
@@ -132,7 +132,7 @@ button {
 
 @media (max-width: 800px) {
     .accordion {
-        width: 365px;
+        width: 500px;
         display: flex;
         justify-content: center;
     }

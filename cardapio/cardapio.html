@@ -45,7 +45,7 @@
         <!-- CATEGORIA PROMOÇÃO SEMANA -->
         <section id="produtos" class="accordion">
             <!-- PROMOÇÃO DA SEMANA -->
-            <div class="contentBx">
+            <div class="contentBx" onclick="teste()">
                 <div class="label">PROMOÇÃO DA SEMANA</div>
                 <div class="content">
                     <div class="img-produto"></div>
@@ -236,17 +236,49 @@
     </footer>
 
     <script>
-        const accordion = document.querySelectorAll('.contentBx') ; 
-        const text = document.querySelectorAll('content');
+        const accordion = document.querySelectorAll('.label') ; 
+        //const text = document.querySelectorAll('content');
     
 
         accordion.forEach(acc => {
             acc.addEventListener('click', function(){
                 this.classList.toggle('active'); 
-                const label = acc.nextElementSibling;
-                console.log(label);
+                //const label = acc.nextElementSibling;
+                //console.log(label);
             })
         })
+
+        function teste() {
+            console.log("click")
+            if(accordion.className == 'label') {
+                console.log('if')
+            } else {
+                console.log('else')
+                var content = document.querySelectorAll(".content");
+
+                content.style.height = 'auto';
+                content.style.borderBottom = "1px solid grey";
+                content.style.padding = 10+'px';
+            }
+        }
+
+
+        /* 
+            .accordion .contentBx .content {
+                position: relative;
+                background-color: white;
+                height: 0;
+                overflow: hidden;
+                transition: 0.5s;
+                //overflow-y: auto; 
+            }
+
+            .accordion .contentBx.active .content {
+                height: auto;
+                border-bottom: 1px solid grey;
+                padding: 10px;
+            }
+        */
 
     </script>
 </body>
