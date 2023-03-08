@@ -6,18 +6,8 @@
 }
 
 /* https://stackoverflow.com/questions/29147806/how-can-i-set-the-image-opacity-for-body-background */
-body::after {
-    content: "";
-    background: url("/images/fundo-b.png");
-    opacity: 0.25;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; 
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+    background: url("/images/fundo-5.png");
     background-repeat: repeat-y;
 }
 .main-text {
@@ -54,13 +44,90 @@ body::after {
     float: left;
 }
 
+/* STORIES */
+/* https://www.youtube.com/watch?v=tgkkHrcEFGs */
+.stories-container {
+    display: flex;
+   /*  background: white; */
+   /*  box-shadow: 0 3px 24px -8px rgb(0, 0, 0.3); */
+    width: 760px;
+    margin: 40px auto 20px;
+    padding: 20px 5px 10px;
+    gap: 32px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+.stories-container .content-stories img {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 300;
+    vertical-align: middle;
+}
+
+.stories-container .content-stories span {
+    text-align: center;
+    font-size: 16px;
+    width: 140px;
+}
+.stories-container .content-stories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.stories-container::-webkit-scrollbar {
+    width: 0;
+} 
+.stories-container.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+/* .stories-container .content-stories::before {
+    position: absolute;
+    content: "";
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+}
+.stories-container .content-stories::after {
+    position: absolute;
+    content: "";
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    background: linear-gradient(#dd2a7b, #f58529);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+ */
+
 /* https://www.youtube.com/watch?v=4qnWreynXLU */
 /* https://www.youtube.com/watch?v=dPLHi7tsoFU */
+
+/* PRINCIPAL */
 .accordion .contentBx {
     position: relative;
     margin: 10px 20px;
 }
 
+/* HEADER */
 .accordion .contentBx .label {
     position: relative;
     padding: 10px;
@@ -70,10 +137,11 @@ body::after {
     border-top: 2px solid black;
 }
 
+/* HEADER - TEXTO */
 .accordion .contentBx .label p {
     font-weight: bold;
 }
-
+/* desativado */
 .accordion .contentBx .label::before {
     content: '+';
     position: absolute;
@@ -82,10 +150,17 @@ body::after {
     transform: translateY(-50%);
     font-size: 1.5em;
 }
+/* ativado */
 .accordion .contentBx .label.active::before {
     content: '–';
 }
 
+/* CONTEUDO */
+.product {
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+/* desativado */
 .accordion .contentBx .content {
     position: relative;
     background-color: white;
@@ -94,24 +169,24 @@ body::after {
     transition: 0.5s;
     /*overflow-y: auto; */
 }
+/* ativado */
+.accordion .contentBx .content.active {
+    height: auto;
+} 
+
+/* CONTEUDO - TEXTO */
 .accordion .contentBx .content p {
     margin-top: 5px;
     text-align: justify;
 }
+
+/* TITULO - VALOR (PRODUTO) */
 .h6, .h7 {
     font-weight: bold;
     margin-top: 5px;
 }
 
-.accordion .contentBx .content.active {
-    height: auto;
-} 
-
-.product {
-    padding: 10px;
-    border-bottom: 1px solid grey;
-}
-
+/* BUTTON - HORARIO */
 #horario a {
     text-decoration: none;
 }

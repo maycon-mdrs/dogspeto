@@ -39,11 +39,53 @@
                 </a>
             </div>
         </section>
-        <section id="stories" class="container-section"></section>
+
+        <!-- STORIES -->
+        <section id="stories" class="stories-container">
+
+            <a class="content-stories" href="#promocao">
+                <img src="/cardapio/produtos/combo.jpg" alt="">
+                <span>PROMOÇÃO DA SEMANA</span>
+              
+            </a>
+
+            <div class="content-stories">
+                <img src="/cardapio/produtos/combo.jpg" alt="">
+                <span>🌭SALSICHA</span>
+            </div>
+
+            <div class="content-stories">
+                <img src="/cardapio/produtos/combo.jpg" alt="">
+                <span>🌭CALABRESA</span>
+            </div>
+
+            <div class="content-stories">
+                <img src="/cardapio/produtos/combo.jpg" alt="">
+                <span>ESPETOS</span>
+            </div>
+
+            <div class="content-stories">
+                <img src="/cardapio/produtos/combo.jpg" alt="">
+                <span>COMBOS</span>
+            </div>
+
+            <div class="content-stories">
+                <img src="/cardapio/produtos/combo.jpg" alt="">
+                <span>BEBIDAS</span>
+            </div>
+            
+            <div class="content-stories">
+                <img src="/cardapio/produtos/combo.jpg" alt="">
+                <span>EXTRAS</span>
+            </div>
+
+
+
+        </section>
 
 
         <!-- CATEGORIA PROMOÇÃO SEMANA -->
-        <section id="produtos" class="accordion">
+        <section id="promocao" class="accordion">
             <!-- PROMOÇÃO DA SEMANA -->
             <div class="contentBx">
                 <div class="label"><p>PROMOÇÃO DA SEMANA</p></div>
@@ -60,7 +102,7 @@
         
 
         <!-- CATEGORIA - CACHORRO QUENTE - SALSICHA -->
-        <section id="produtos" class="accordion">
+        <section id="salsicha" class="accordion">
             <div class="contentBx">
                 <div class="label"><p>CACHORRO QUENTE - SALSICHA</p></div>
                    
@@ -208,17 +250,45 @@
     </footer>
 
     <script>
-
+    
         /* ACCORDION */
         const accordion = document.querySelectorAll('.label');     
-
         accordion.forEach(acc => {
             acc.addEventListener('click', function(){
                 const text = acc.nextElementSibling;
                 text.classList.toggle('active');
                 acc.classList.toggle('active'); 
-            })
+            });
         })
+      
+        /* DRAG TO SCROLLING x */
+        const slider = document.querySelector('.stories-container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3; //scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+            console.log(walk);
+        });
 
         /* "STORIES" */
         const allStories = [
@@ -259,7 +329,7 @@
             }
         ];
 
-        const storiesContainer = document.querySelector(".stories-container")
+       /*  const storiesContainer = document.querySelector(".stories-container")
 
         allStories.forEach((s) => {
             const content = document.createElement("div");
@@ -270,7 +340,7 @@
 
             storiesContainer.appendChild(content);
             content.appendChild(img);
-        })
+        }) */
 
         /* PRODUCTS */
         const promo = [
