@@ -70,6 +70,10 @@ body::after {
     border-top: 2px solid black;
 }
 
+.accordion .contentBx .label p {
+    font-weight: bold;
+}
+
 .accordion .contentBx .label::before {
     content: '+';
     position: absolute;
@@ -101,9 +105,12 @@ body::after {
 
 .accordion .contentBx .content.active {
     height: auto;
-    border-bottom: 1px solid grey;
-    padding: 10px;
 } 
+
+.product {
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
 
 #horario a {
     text-decoration: none;
@@ -132,12 +139,17 @@ button {
 
 @media (max-width: 800px) {
     .accordion {
-        width: 500px;
+        width: 365px;
         display: flex;
         justify-content: center;
     }
+    .accordion .contentBx .label p {
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    }
     button {
-        width: 150px;
-        height: 35px;
+        width: 140px;
+        height: 40px;
     }
 }
