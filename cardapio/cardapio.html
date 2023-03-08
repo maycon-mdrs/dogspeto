@@ -49,35 +49,35 @@
               
             </a>
 
-            <div class="content-stories">
+            <a class="content-stories" href="#salsicha">
                 <img src="/cardapio/produtos/combo.jpg" alt="">
                 <span>🌭SALSICHA</span>
-            </div>
+            </a>
 
-            <div class="content-stories">
+            <a class="content-stories" href="#calabresa">
                 <img src="/cardapio/produtos/combo.jpg" alt="">
                 <span>🌭CALABRESA</span>
-            </div>
+            </a>
 
-            <div class="content-stories">
+            <a class="content-stories" href="#espestos">
                 <img src="/cardapio/produtos/combo.jpg" alt="">
                 <span>ESPETOS</span>
-            </div>
+            </a>
 
-            <div class="content-stories">
+            <a class="content-stories" href="#combo">
                 <img src="/cardapio/produtos/combo.jpg" alt="">
                 <span>COMBOS</span>
-            </div>
+            </a>
 
-            <div class="content-stories">
+            <a class="content-stories" href="#bebidas">
                 <img src="/cardapio/produtos/combo.jpg" alt="">
                 <span>BEBIDAS</span>
-            </div>
+            </a>
             
-            <div class="content-stories">
+            <a class="content-stories"  href="#extras">
                 <img src="/cardapio/produtos/combo.jpg" alt="">
                 <span>EXTRAS</span>
-            </div>
+            </a>
 
 
 
@@ -126,7 +126,7 @@
 
 
         <!-- CATEGORIA - CACHORRO QUENTE - CALABRESA -->
-        <section id="produtos" class="accordion">
+        <section id="calabresa" class="accordion">
             <div class="contentBx">
                 <div class="label"><p>CACHORRO QUENTE - CALABRESA</p></div>
 
@@ -150,7 +150,7 @@
 
 
         <!-- CATEGORIA - ESPETOS -->
-        <section id="produtos" class="accordion">
+        <section id="espetos" class="accordion">
             <div class="contentBx">
                 <div class="label"><p>ESPETOS</p></div>
 
@@ -174,7 +174,7 @@
 
 
         <!-- CATEGORIA - COMBOS -->
-        <section id="produtos" class="accordion">
+        <section id="combos" class="accordion">
             <div class="contentBx">
                 <div class="label"><p>COMBOS</p></div>
                 <div class="content">
@@ -197,7 +197,7 @@
 
 
         <!-- CATEGORIA - BEBIDAS -->
-        <section id="produtos" class="accordion">
+        <section id="bebidas" class="accordion">
             <div class="contentBx">
                 <div class="label"><p>BEBIDAS</p></div>
                 <div class="content">
@@ -220,7 +220,7 @@
 
         
         <!-- CATEGORIA - EXTRAS -->
-        <section id="produtos" class="accordion">
+        <section id="extras" class="accordion">
             <div class="contentBx">
                 <div class="label"><p>EXTRAS</p></div>
                 <div class="content">
@@ -252,14 +252,15 @@
     <script>
     
         /* ACCORDION */
-        const accordion = document.querySelectorAll('.label');     
+        const accordion = document.querySelectorAll('.label');  
         accordion.forEach(acc => {
             acc.addEventListener('click', function(){
                 const text = acc.nextElementSibling;
                 text.classList.toggle('active');
                 acc.classList.toggle('active'); 
             });
-        })
+        });
+
       
         /* DRAG TO SCROLLING x */
         const slider = document.querySelector('.stories-container');
@@ -295,37 +296,37 @@
             /* PROMOÇÃO DA SEMANA */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "bloco n. 1"
+                title: "PROMOÇÃO DA SEMANA"
             },
             /* COM SALSICHA */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "bloco n. 2"
+                title: "🌭SALSICHA"
             },
             /* COM CALABRESA */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "bloco n. 3"
+                title: "🌭CALABRESA"
             },
             /* ESPETOS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "bloco n. 4"
+                title: "ESPETOS"
             },
             /* COMBOS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "bloco n. 5"
+                title: "COMBOS"
             },
             /* BEBIDAS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "bloco n. 6"
+                title: "BEBIDAS"
             },
             /* EXTRAS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "bloco n. 7"
+                title: "EXTRAS"
             }
         ];
 
