@@ -37,8 +37,8 @@ body {
 
 .accordion {
     width: 800px;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
 .img-produto {
@@ -242,8 +242,6 @@ button {
     /* PRODUTOS */
     .accordion {
         width: 365px;
-        display: flex;
-        justify-content: center;
     }
     .accordion .contentBx .label p {
         font-size: 12px;

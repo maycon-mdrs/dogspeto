@@ -48,9 +48,7 @@
         <!-- STORIES -->
         <section id="stories" class="stories-container"></section>
 
-        <section id="categorias">
-            
-        </section>
+        <section id="categorias"></section>
 
         <!-- CATEGORIA PROMOÇÃO SEMANA -->
         <section id="promocao" class="accordion">
@@ -239,27 +237,7 @@
     </footer>
 
     <script>
-        /* STORIES */
-        // https://www.sololearn.com/compiler-playground/WpmE6o6X0HOU/?ref=app
-        const story = document.querySelectorAll('.content-stories');
-        story.forEach((st, index) => {
-            st.addEventListener('click', function () {
-                //console.log(index)
-                document.getElementsByClassName("label")[index].click()
-            })
-        })
-
-        /* ACCORDION */
-        const accordion = document.querySelectorAll('.label');
-        accordion.forEach(acc => {
-            acc.addEventListener('click', function () {
-                const text = acc.nextElementSibling;
-                text.classList.toggle('active');
-                acc.classList.toggle('active');
-            });
-        });
-
-
+    
         /* DRAG TO SCROLLING x */
         const slider = document.querySelector('.stories-container');
         let isDown = false;
@@ -294,121 +272,137 @@
             /* PROMOÇÃO DA SEMANA */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "PROMOÇÃO DA SEMANA"
+                title: "PROMOÇÃO DA SEMANA",
+                endereco: "#promocao"
             },
             /* COM SALSICHA */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "🌭SALSICHA"
+                title: "🌭SALSICHA",
+                endereco: "#salsicha"
             },
             /* COM CALABRESA */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "🌭CALABRESA"
+                title: "🌭CALABRESA",
+                endereco: "#calabresa" 
             },
             /* ESPETOS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "ESPETOS"
+                title: "ESPETOS",
+                endereco: "#espetos"
             },
             /* COMBOS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "COMBOS"
+                title: "COMBOS",
+                endereco: "#combos"
             },
             /* BEBIDAS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "BEBIDAS"
+                title: "BEBIDAS",
+                endereco: "#bebidas"
             },
             /* EXTRAS */
             {
                 thumbUrl: "/cardapio/produtos/dogspeto.jpg",
-                title: "EXTRAS"
+                title: "EXTRAS",
+                endereco: "#extras"
             }
         ];
 
         const storiesContainer = document.querySelector(".stories-container")
 
-        allStories.forEach((s) => {
+        allStories.forEach((st) => {
             const content = document.createElement("a");
             content.classList.add("content-stories");
+            content.setAttribute("href", st.endereco);
 
             const img = document.createElement("img");
-            img.setAttribute("src", s.thumbUrl);
+            img.setAttribute("src", st.thumbUrl);
 
             const title = document.createElement("span");
-            title.innerHTML = s.title;
+            title.innerHTML = st.title;
 
             storiesContainer.appendChild(content);
             content.appendChild(img);
             content.appendChild(title);
         })
 
-       
+        /* STORIES */
+        // https://www.sololearn.com/compiler-playground/WpmE6o6X0HOU/?ref=app
+        const story = document.querySelectorAll('.content-stories');
+        story.forEach((st, index) => {
+            st.addEventListener('click', function () {
+                //console.log(index)
+                document.getElementsByClassName("label")[index].click()
+            })
+        })
 
-        /* TRADICIONAL */
-        const accordionItems =
-            [
-                {
-                    categoria: 'CACHORRO QUENTE - SALSICHA',
-                    items:
-                        [{
-                            imgProduct: "",
-                            title: "",
-                            description: "",
-                            valor: ""
-                        },
-                        /* SERTANEJO */
-                        {
-                            imgProduct: "",
-                            title: "",
-                            description: "",
-                            valor: ""
-                        }],
-                },
-                {
-                    categoria: 'CACHORRO QUENTE - CALABRESA',
-                    items:
-                        [{
-                            imgProduct: "",
-                            title: "",
-                            description: "",
-                            valor: ""
-                        },
-                        /* SERTANEJO */
-                        {
-                            imgProduct: "",
-                            title: "",
-                            description: "",
-                            valor: ""
-                        }],
-                },
-            ];
+        /* PROMO */
+        const promo = [
+           /* produto */
+            {
+                categoria: "PROMOÇÃO DA SEMANA",
+                id: "promo",
+                imgProduct: "/cardapio/produtos/dogspeto.jpg",
+                title: "teste",
+                description: "descrição - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus facilisis ex, sit amet ultrices mi commodo et. Nunc vitae tincidunt augue.",
+                valor: ""
+            },
+        ];
+        
+        /* SALSICHA */
+        const salsicha = [
+           /* TRADICIONAL */
+            {
+                categoria: "🌭SALSICHA",
+                id: "salsicha",
+                imgProduct: "/cardapio/produtos/dogspeto.jpg",
+                title: "TRADICIONAL",
+                description: "descrição - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus facilisis ex, sit amet ultrices mi commodo et. Nunc vitae tincidunt augue.",
+                valor: "R$12,00"
+            },
+            /* SERTANEJO */
+            {
+                categoria: "🌭SALSICHA",
+                id: "salsicha",
+                imgProduct: "/cardapio/produtos/dogspeto.jpg",
+                title: "SERTANEJO",
+                description: "descrição - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus facilisis ex, sit amet ultrices mi commodo et. Nunc vitae tincidunt augue.",
+                valor: "R$13,00"
+            },
+        ];
 
-
-        //     <section id="promocao" class="accordion">
-        //     <!-- PROMOÇÃO DA SEMANA -->
-        //     <div class="contentBx">
-        //         <div class="label">
-        //             <p>PROMOÇÃO DA SEMANA</p>
-        //         </div>
-        //         <div class="content">
-        //             <div class="img-produto"></div>
-        //             <h7>TÍTULO</h7>
-        //             <p>
-        //                 descrição - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus facilisis
-        //                 ex, sit amet ultrices mi commodo et. Nunc vitae tincidunt augue.
-        //             </p>
-        //             <h6>VALOR</h6>
-        //         </div>
-        //     </div>
-        // </section>
-
-        const categorias = document.querySelector('#categorias');
-        accordionItems.forEach(item => {
+        /* CALABRESA */
+        const calabresa = [
+           /* produto */
+            {
+                categoria: "🌭CALABRESA",
+                id: "calabresa",
+                imgProduct: "",
+                title: "teste",
+                description: "",
+                valor: ""
+            },
+        ];
+        
+        
+        const categoriasProdutos =[promo, salsicha, calabresa];
+        
+            
+        //const categorias = document.querySelector('#categorias');
+        const main = document.querySelector(".main-text");
+        console.log(categoriasProdutos.length);
+        categoriasProdutos.forEach((item, index) => {
             const sectionAccordion = document.createElement("section");
             sectionAccordion.classList.add('accordion');
+            //sectionAccordion.id = item[index].id;
+            item.forEach(i => {
+                sectionAccordion.id = i.id;
+            });
 
             const contentBx = document.createElement("div");
             contentBx.classList.add('contentBx');
@@ -419,10 +413,67 @@
             const content = document.createElement("div");
             content.classList.add('content');
 
-            const imgProduto = document.createElement("div");
-            imgProduto.classList.add('img-poduto');
-        })
+            const pLabel = document.createElement("p");
+            //pLabel.innerHTML = item[index].categoria;
+            item.forEach(i => {
+                pLabel.innerHTML = i.categoria;
+            });
         
+
+            main.appendChild(sectionAccordion);
+                sectionAccordion.append(contentBx);
+                    contentBx.appendChild(label);
+                        label.appendChild(pLabel);
+                    contentBx.appendChild(content);
+                    item.forEach(i => { 
+                        const product = document.createElement("div");
+                        product.classList.add('product');
+
+                        const imgProduto = document.createElement("div");
+                        imgProduto.classList.add('img-produto');
+
+                        const pDescricao = document.createElement("p");
+                        const h6 = document.createElement("h6");
+                        const h7 = document.createElement("h7");
+
+                        content.appendChild(product);
+                            product.appendChild(imgProduto);
+                            product.appendChild(h7);
+                                h7.innerHTML = i.title;
+                            product.appendChild(pDescricao);
+                                pDescricao.innerHTML = i.description;
+                            product.appendChild(h6);
+                                h6.innerHTML = i.valor;
+                    })
+        })
+         /* ACCORDION */
+        const accordion = document.querySelectorAll('.label');
+        accordion.forEach(acc => {
+            acc.addEventListener('click', function () {
+                const text = acc.nextElementSibling;
+                text.classList.toggle('active');
+                acc.classList.toggle('active');
+            });
+        });
+    
+        /* const storiesContainer = document.querySelector(".stories-container")
+
+        allStories.forEach((st) => {
+            const content = document.createElement("a");
+            content.classList.add("content-stories");
+            content.setAttribute("href", st.endereco);
+
+            const img = document.createElement("img");
+            img.setAttribute("src", st.thumbUrl);
+
+            const title = document.createElement("span");
+            title.innerHTML = st.title;
+
+            storiesContainer.appendChild(content);
+            content.appendChild(img);
+            content.appendChild(title);
+        })
+ */
 
         // const allProducts = [promo, comSalsicha, comCalabresa, espetos, combos, bebidas, extras];
         // const promocaoContainer = document.querySelector("#promocao");
