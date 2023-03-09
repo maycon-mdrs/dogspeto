@@ -65,6 +65,9 @@ body {
     overflow: hidden;
     overflow-x: auto;
 }
+.stories-container a:hover {
+    transform: scale(1.1);
+}
 .stories-container .content-stories img {
     position: relative;
     width: 90px;
@@ -138,7 +141,7 @@ body {
 /* HEADER */
 .accordion .contentBx .label {
     position: relative;
-    padding: 10px;
+    padding: 15px;
     background-color: white;
     color: black;
     cursor: pointer;
@@ -148,6 +151,7 @@ body {
 /* HEADER - TEXTO */
 .accordion .contentBx .label p {
     font-weight: bold;
+    margin: 0;
 }
 /* desativado */
 .accordion .contentBx .label::before {
@@ -175,7 +179,7 @@ body {
     height: 0;
     overflow: hidden;
     transition: 0.5s;
-    /*overflow-y: auto; */
+   /* overflow-y: auto; */
 }
 /* ativado */
 .accordion .contentBx .content.active {
@@ -238,7 +242,10 @@ button {
         font-size: 12px;
         width: 110px;
     }
-    
+    /* HEADER */
+    .accordion .contentBx .label {
+        padding: 10px;
+    }
     /* PRODUTOS */
     .accordion {
         width: 365px;
@@ -247,6 +254,19 @@ button {
         font-size: 12px;
         padding: 0;
         margin: 0;
+    }
+    /* CONTEUDO - TEXTO */
+    .accordion .contentBx .content p {
+        margin-top: 5px;
+        text-align: justify;
+        font-size: 10px;
+    }
+
+    /* TITULO - VALOR (PRODUTO) */
+    .h6, .h7 {
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 5px;
     }
     button {
         width: 140px;

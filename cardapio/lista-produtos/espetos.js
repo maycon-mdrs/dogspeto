@@ -1,5 +1,5 @@
 /* ESPETOS */
-const espetos = [
+export const espetos = [
     /* CARNE */
     {
         categoria: "ESPETOS",
@@ -83,7 +83,7 @@ const espetos = [
     },
     /* QUEIJO COALHO */
     {
-        categoria: "ESPETOS",
+        categoria: "🍖 ESPETOS",
         id: "espetos",
         imgProduct: "/cardapio/produtos/dogspeto.jpg",
         title: "QUEIJO COALHO",
