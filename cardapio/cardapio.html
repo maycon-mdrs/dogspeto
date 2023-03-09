@@ -84,10 +84,14 @@
 
     <script type="module">
 
-        import {allStories} from "/cardapio/lista-produtos/stories.js"
-        import {promo} from "/cardapio/lista-produtos/promocao.js"
-        import {salsicha} from "/cardapio/lista-produtos/salsicha.js"
-        import {calabresa} from "/cardapio/lista-produtos/calabresa.js"
+        import {allStories} from "/cardapio/lista-produtos/stories.js"   // stories
+        import {promo} from "/cardapio/lista-produtos/promocao.js"       // 1
+        import {salsicha} from "/cardapio/lista-produtos/salsicha.js"    // 2
+        import {calabresa} from "/cardapio/lista-produtos/calabresa.js"  // 3
+        import {espetos} from "/cardapio/lista-produtos/espetos.js"      // 4
+        import {combos} from "/cardapio/lista-produtos/combos.js"        // 5
+        import {bebidas} from "/cardapio/lista-produtos/bebidas.js"      // 6
+        import {extras} from "/cardapio/lista-produtos/extras.js"        // 7
         
 
         /* ---------------------------------------------------------- */
@@ -162,7 +166,7 @@
         /* ---------- CRIANDO DINAMICAMENTE HTML - PRODUTOS --------- */
         /* ---------------------------------------------------------- */
 
-        const categoriasProdutos =[promo, salsicha, calabresa];
+        const categoriasProdutos =[promo, salsicha, calabresa, espetos, combos, bebidas, extras];
             
         //const categorias = document.querySelector('#categorias');
         const main = document.querySelector(".main-text");
