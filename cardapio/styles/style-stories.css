@@ -13,7 +13,8 @@
     overflow: hidden;
     overflow-x: auto;
 }
-
+/* https://codepen.io/marvink/pen/OJoMrg */
+/* https://www.delftstack.com/howto/javascript/javascript-redirect-after-time/ */
 /* ANCORA - redirecionar na pagina */
 .stories-container .content-stories {
     display: flex;
