@@ -1,0 +1,150 @@
+/* ------------------------------------------- */
+/* ------------- SECTION PRODUCTS ------------ */
+/* https://www.youtube.com/watch?v=4qnWreynXLU */
+/* https://www.youtube.com/watch?v=dPLHi7tsoFU */
+/* ------------------------------------------- */
+
+/* SECTION - produto */
+.accordion {
+    width: 800px;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+/* CATEGORIA - produto */
+.accordion .contentBx {
+    position: relative;
+    margin: 10px 20px;
+}
+
+/* ---------------------------------- */
+/* ------- HEADER - categoria ------- */
+/* ------------ LABEL --------------- */
+/* ---------------------------------- */
+.accordion .contentBx .label {
+    position: relative;
+    padding: 15px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-top: 2px solid black;
+}
+
+/* HEADER - TEXTO */
+.accordion .contentBx .label p {
+    font-weight: bold;
+    margin: 0;
+}
+/* desativado */
+.accordion .contentBx .label::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+/* ativado */
+.accordion .contentBx .label.active::before {
+    content: '–';
+}
+
+/* ---------------------------------- */
+/* -------- CONTEUDO - produto ------ */
+/* ---------------------------------- */
+/* desativado */
+.accordion .contentBx .content {
+    position: relative;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out 0s;
+
+   /* overflow-y: auto; */
+}
+/* ativado */
+.accordion .contentBx .content.active {
+    max-height: 2000px;
+} 
+
+/* DIV - produto conteudo */
+.product {
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    display: flex;
+}
+
+/* DIV - img produto */
+.img-produto img {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* DETLALHES - produto */
+.content-text {
+    padding: 0 0 0 10px;
+}
+
+/* TITULO - VALOR (PRODUTO) */
+.h6 {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/* Descrição */
+.accordion .contentBx .content p {
+    text-align: justify;
+    margin: 10px 0px;
+    padding: 0;
+}
+
+/* ---------------------------------- */
+/* ---------- RESPONSIVIDADE -------- */
+/* ---------------------------------- */
+@media (max-width: 800px) {
+    /* SECTION - produto */
+    .accordion {
+        width: 365px;
+    }
+
+    /* ---------------------------------- */
+    /* ------- HEADER - categoria ------- */
+    /* ------------ LABEL --------------- */
+    /* ---------------------------------- */
+    .accordion .contentBx .label {
+        padding: 10px;
+    }
+    /* HEADER - TEXTO */
+    .accordion .contentBx .label p {
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* ---------------------------------- */
+    /* -------- CONTEUDO - produto ------ */
+    /* ---------------------------------- */ 
+    /* DIV - img produto */   
+    .img-produto img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    /* TITULO - VALOR (PRODUTO) */
+    .h6 {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    /* Descrição */
+    .accordion .contentBx .content p {
+        text-align: justify;
+        font-size: 10px;
+        margin: 8px 0;
+    }
+    
+}

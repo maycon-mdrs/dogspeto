@@ -43,6 +43,8 @@
 
 
     <!-- CSS -->
+    <link rel="stylesheet" href="/cardapio/styles/style-stories.css">
+    <link rel="stylesheet" href="/cardapio/styles/style-products.css">
     <link rel="stylesheet" href="style.css">
 
     <title>DogSpeto - Cardápio</title>
@@ -203,25 +205,35 @@
                         const product = document.createElement("div");
                         product.classList.add('product');
 
+                        const contentText = document.createElement("div");
+                        contentText.classList.add('content-text');
+
                         const imgProduto = document.createElement("div");
                         imgProduto.classList.add('img-produto');
 
                         const pDescricao = document.createElement("p");
 
-                        const h6 = document.createElement("h6");
-                        h6.classList.add('h6');
+                        const h6_label = document.createElement("h6");
+                        h6_label.classList.add('h6');
 
-                        const h7 = document.createElement("h7");
-                        h7.classList.add('h7');
+                        const h6_contentText = document.createElement("h6");
+                        h6_contentText.classList.add('h6');
+
+                        //const h7 = document.createElement("h7");
+                        //h7.classList.add('h7');
 
                         content.appendChild(product);
                             product.appendChild(imgProduto);
-                            product.appendChild(h7);
-                                h7.innerHTML = i.title;
-                            product.appendChild(pDescricao);
-                                pDescricao.innerHTML = i.description;
-                            product.appendChild(h6);
-                                h6.innerHTML = i.valor;
+                                const img = document.createElement("img");
+                                img.setAttribute("src", i.imgProduct);
+                                imgProduto.appendChild(img);
+                            product.appendChild(contentText);
+                                contentText.appendChild(h6_label);
+                                    h6_label.innerHTML = i.title;
+                                contentText.appendChild(pDescricao);
+                                    pDescricao.innerHTML = i.description;
+                                contentText.appendChild(h6_contentText);
+                                    h6_contentText.innerHTML = i.valor;
                     });
         });
 
