@@ -28,6 +28,9 @@
 }
 
 /* Mouse hover seção produto */
+.stories-container a {
+    transition: all 0.1s ease-in-out;
+}
 .stories-container a:hover {
     transform: scale(1.1);
 }
