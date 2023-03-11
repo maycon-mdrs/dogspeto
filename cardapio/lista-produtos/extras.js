@@ -31,7 +31,7 @@ export const extras = [
     {
         categoria: "EXTRAS",
         id: "extras",
-        imgProduct: "/cardapio/produtos/farofa.PNG",
+        imgProduct: "/cardapio/produtos/farofa.png",
         title: "FAROFA",
         description: "Porção extra de Farofa.",
         valor: "R$4,00"
