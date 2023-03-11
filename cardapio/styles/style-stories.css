@@ -56,6 +56,18 @@
     cursor: -webkit-grabbing;
 }
 
+/* STYLE SCROLLBAR */
+::-webkit-scrollbar {
+    background-color: rgb(211, 211, 211);
+    height: 10px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 201, 201);
+}
+
 /* 
 .stories-container .content-stories::before {
     position: absolute;
@@ -86,6 +98,18 @@
 /* ---------------------------------- */
 /* ---------- RESPONSIVIDADE -------- */
 /* ---------------------------------- */
+@media (max-width: 600px){
+    /* HIDDEN - scrollbar */
+    .stories-container::-webkit-scrollbar {
+        display: none;
+    } 
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .stories-container {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+}
+
 @media (max-width: 800px) {
     /* ------------------------------------------- */
     /* ------------- SECTION STORIES ------------- */
@@ -109,8 +133,4 @@
         font-size: 12px;
         width: 110px;
     }
-    /* HIDDEN - scrollbar */
-    .stories-container::-webkit-scrollbar {
-        width: 0;
-    } 
 }

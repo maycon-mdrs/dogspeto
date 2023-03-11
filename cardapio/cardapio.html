@@ -58,6 +58,9 @@
 
     <main class="main-text">
 
+        <!-- MENU -->
+       
+
         <!-- HEADER - LOGO -->
         <header class="container-header">
             <img class="logo" src="/images/logo-b.png" alt="Logo">
@@ -67,8 +70,7 @@
         <section id="horario" class="container-section">
             <div>
                 <a href="#">
-                    <button type="button" class="social-btn-t">
-                        <span>ABERTO</span>
+                    <button type="button" id="btn-horario" class="social-btn-t-fechado">
                     </button>
                 </a>
             </div>
@@ -138,7 +140,9 @@
         allStories.forEach((st) => {
             const content = document.createElement("a");
             content.classList.add("content-stories");
-            content.setAttribute("href", st.endereco);
+
+            // Ancora com delay 
+            content.setAttribute("href",`javascript:setTimeout(()=>{window.location = '${st.endereco}'},150);`)
 
             const img = document.createElement("img");
             img.setAttribute("src", st.thumbUrl);
@@ -249,6 +253,29 @@
                 acc.classList.toggle('active');
             });
         });
+
+        /* ---------------------------------------------------------- */
+        /* -------------------- BUTTON - HORARIO -------------------- */
+        /* ---------------------------------------------------------- */
+
+        var data = new Date();
+        var hora = data.getHours();          // 0-23
+        var min = data.getMinutes();        // 0-59
+
+        const btnHorario = document.querySelector("#btn-horario");
+        const disp = document.createElement("span");
+
+        if(hora >= 18 && hora <= 22){
+            console.log('aberto');
+            btnHorario.className = 'social-btn-t-aberto';
+            disp.innerHTML = "ABERTO";
+            btnHorario.appendChild(disp);
+        } else {
+            console.log('fehcado');
+            btnHorario.className = 'social-btn-t-fechado';
+            disp.innerHTML = "FECHADO";
+            btnHorario.appendChild(disp);
+        }
 
     </script>
 </body>

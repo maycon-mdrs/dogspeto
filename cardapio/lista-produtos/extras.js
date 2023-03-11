@@ -1,12 +1,39 @@
 /* EXTRAS */
 export const extras = [
-    /* EXTRA - 01 */
+    /* BATATA - 300G */
      {
          categoria: "EXTRAS",
          id: "extras",
-         imgProduct: "/cardapio/produtos/dogspeto.jpg",
-         title: "EXTRA - 01",
-         description: "descrição - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus facilisis ex, sit amet ultrices mi commodo et. Nunc vitae tincidunt augue.",
-         valor: "R$"
+         imgProduct: "/cardapio/produtos/batata-f.png",
+         title: "BATATA FRITA",
+         description: "Batata Frita - 300g.",
+         valor: "R$12,00"
      },
+     /* BATATA, CHEDDAR E BACON - 300G */
+     {
+        categoria: "EXTRAS",
+        id: "extras",
+        imgProduct: "/cardapio/produtos/batata-c.jpg",
+        title: "BATATA FRITA, CHEDDAR E BACON",
+        description: "Batata Frita com Cheddar e Bacon - 300g.",
+        valor: "R$16,00"
+    },
+    /* VINAGRETE */
+    {
+        categoria: "EXTRAS",
+        id: "extras",
+        imgProduct: "/cardapio/produtos/vinagrete.png",
+        title: "VINAGRETE",
+        description: "Porção extra de Vinagrete.",
+        valor: "R$3,00"
+    },
+    /* FAROFA */
+    {
+        categoria: "EXTRAS",
+        id: "extras",
+        imgProduct: "/cardapio/produtos/farofa.png",
+        title: "FAROFA",
+        description: "Porção extra de Farofa.",
+        valor: "R$4,00"
+    },
  ];

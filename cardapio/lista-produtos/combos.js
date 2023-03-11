@@ -4,9 +4,9 @@ export const combos = [
      {
          categoria: "COMBOS",
          id: "combos",
-         imgProduct: "/cardapio/produtos/dogspeto.jpg",
-         title: "COMBO - 01",
-         description: "descrição - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus facilisis ex, sit amet ultrices mi commodo et. Nunc vitae tincidunt augue.",
-         valor: "R$"
+         imgProduct: "/cardapio/produtos/combo.jpg",
+         title: "COMBO",
+         description: "Qualquer Cachorro-Quente mais R$8,00 vira combo de Batata Frita - 300g, Regrigente e Molho (Maionese Verde, Barbecue, Puro Alho ou Ketchup).",
+         valor: "Valor do Cachorro-Quente + R$8,00"
      },
  ];
