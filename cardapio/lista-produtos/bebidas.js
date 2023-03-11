@@ -4,7 +4,7 @@ export const bebidas = [
      {
          categoria: "BEBIDAS",
          id: "bebidas",
-         imgProduct: "/cardapio/produtos/coca.png",
+         imgProduct: "/cardapio/produtos/coca.PNG",
          title: "COCA-COLA",
          description: "Coca-Cola em lata - 350ml.",
          valor: "R$6,00"
@@ -13,7 +13,7 @@ export const bebidas = [
      {
         categoria: "BEBIDAS",
         id: "bebidas",
-        imgProduct: "/cardapio/produtos/coca-zero.png",
+        imgProduct: "/cardapio/produtos/coca-zero.PNG",
         title: "COCA-COLA ZERO",
         description: "Coca-Cola Zero em lata - 350ml.",
         valor: "R$6,00"
@@ -22,7 +22,7 @@ export const bebidas = [
     {
         categoria: "BEBIDAS",
         id: "bebidas",
-        imgProduct: "/cardapio/produtos/guarana.png",
+        imgProduct: "/cardapio/produtos/guarana.PNG",
         title: "GUARANÁ",
         description: "Guaraná em lata - 350ml.",
         valor: "R$6,00"
@@ -31,7 +31,7 @@ export const bebidas = [
     {
         categoria: "BEBIDAS",
         id: "bebidas",
-        imgProduct: "/cardapio/produtos/agua.png",
+        imgProduct: "/cardapio/produtos/agua.PNG",
         title: "ÁGUA",
         description: "Garrafinha de água mineral - 500ml.",
         valor: "R$4,00"

@@ -4,7 +4,7 @@ export const extras = [
      {
          categoria: "EXTRAS",
          id: "extras",
-         imgProduct: "/cardapio/produtos/batata-f.png",
+         imgProduct: "/cardapio/produtos/batata-f.PNG",
          title: "BATATA FRITA",
          description: "Batata Frita - 300g.",
          valor: "R$12,00"
@@ -22,7 +22,7 @@ export const extras = [
     {
         categoria: "EXTRAS",
         id: "extras",
-        imgProduct: "/cardapio/produtos/vinagrete.png",
+        imgProduct: "/cardapio/produtos/vinagrete.PNG",
         title: "VINAGRETE",
         description: "Porção extra de Vinagrete.",
         valor: "R$3,00"
@@ -31,7 +31,7 @@ export const extras = [
     {
         categoria: "EXTRAS",
         id: "extras",
-        imgProduct: "/cardapio/produtos/farofa.png",
+        imgProduct: "/cardapio/produtos/farofa.PNG",
         title: "FAROFA",
         description: "Porção extra de Farofa.",
         valor: "R$4,00"
