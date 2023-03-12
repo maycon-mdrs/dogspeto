@@ -1,0 +1,37 @@
+body {
+    background-color: bisque;
+}
+.modal-content {
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    border-radius: 0.8rem;
+}
+
+.modal-content .label {
+
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.modal-content .label .titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content .label span{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-close{
+    float: right;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: black;
+    border-radius: 50%;
+    text-align: center;
+}

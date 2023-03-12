@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Signatra';
+    src: url('/fonts/Signatra.otf') format('opentype'), url('/fonts/Signatra.ttf') format('truetype');
+    font-weight: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html, body{
+    background: linear-gradient(to bottom , black, #B6212B,  #D89322);
+}
+
+.div-menu {
+    width: 600px;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    height: 60px;
+    width: 100%;
+}
+
+/* LOGO - TEXT */
+.logo {
+    font-family: 'Signatra' ,'Roboto';
+    font-size: 40px;
+    color: #d8ae22;
+}
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    margin: 0;
+    padding: 0;
+}   
+
+nav ul li {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    padding: 5px;
+    margin: 5px;
+    background-color: transparent;
+	border: 2px solid #d8ae22;
+    border-radius: 20px;
+}
+
+nav ul li a {
+    display: inline-block;
+    color: #d8ae22;
+    font-family: 'Roboto';
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#B6212B;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.pages {
+    width: 600px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 350px) {
+    nav ul li {
+        display: flex;
+        justify-content: center;
+        width: 55px;
+        padding: 5px;
+        margin: 5px;
+        background-color: transparent;
+        border: 2px solid #d8ae22;
+        border-radius: 20px;
+    }
+    nav ul li a {
+        display: inline-block;
+        color: #d8ae22;
+        font-family: 'Roboto';
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 12px;
+    }
+}
