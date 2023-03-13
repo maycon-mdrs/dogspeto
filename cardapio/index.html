@@ -47,12 +47,17 @@
     <link rel="stylesheet" href="/cardapio/styles/style-products.css">
     <link rel="stylesheet" href="style.css">
 
+    <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 
+    <script src="modal.js"></script>
+
+    <!-- TITLE -->
     <title>DogSpeto - Cardápio</title>
 </head>
 
-<body>
+<body onresize="ajustarTela()">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RQQJJ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -61,7 +66,6 @@
     <main class="main-text">
 
         <!-- MENU -->
-       
 
         <!-- HEADER - LOGO -->
         <header class="container-header">
@@ -71,12 +75,81 @@
         <!-- BUTTON HORARIO -->
         <section id="horario" class="container-section">
             <div>
-                <a href="#">
+                <a href="#" onclick="showModal()">
                     <button type="button" id="btn-horario" class="social-btn-t-fechado">
                     </button>
                 </a>
             </div>
         </section>
+
+        <!----Instruções Modal---->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+
+                <div id="relogio">
+                    <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                </div>
+
+            <span style="color: white;" class="close-btn" onclick="hiddenModal()">&times;</span>
+            <div class="label">
+                    <div class="titulo">
+                        <span class="txt-titulo">HORÁRIO</span>
+                    </div>
+                </div>
+                <section class="content">
+                    <div class="horarios">
+                        <div class="txt-dia" id="domingo">
+                            <span>DOMIGO</span>
+                            <span class="txt-horario">18:00 às 22:30</span>
+                        </div>
+                        <div class="txt-dia" id="segunda">
+                            <span style="color: #B6212B; font-weight: bold;">SEGUNDA</span>
+                            <span class="txt-horario" style="color: #B6212B; font-weight: bold;">FECHADO</span>
+                        </div>
+                        <div class="txt-dia" id="terca">
+                            <span>TERÇA</span>
+                            <span class="txt-horario">18:00 às 22:30</span>
+                        </div>
+                        <div class="txt-dia" id="quarta">
+                            <span>QUARTA</span>
+                            <span class="txt-horario">18:00 às 22:30</span>
+                        </div>
+                        <div class="txt-dia" id="quinta">
+                            <span>QUINTA</span>
+                            <span class="txt-horario">18:00 às 22:30</span>
+                        </div>
+                        <div class="txt-dia" id="sexta">
+                            <span>SEXTA</span>
+                            <span class="txt-horario">18:00 às 22:30</span>
+                        </div>
+                        <div class="txt-dia" id="sabado">
+                            <span>SÁBADO</span>
+                            <span class="txt-horario">18:00 às 22:30</span>
+                        </div>
+                    </div>
+
+                    <div class="informacoes">
+                        <div class="info">
+                            <span class="txt-titulo">Food truck localizado no food park DuSol</span>
+                        </div>
+
+                        <div class="info">
+                            <span class="txt-titulo">Endereço</span>
+                            <p class="txt-descricao">
+                                Avenida Estrela do Mar, 2183 - Ponta Negra Natal - RN CEP: 59090-400
+                            </p>
+                        </div>
+
+                        <div class="info">
+                            <span class="txt-titulo">Outras informações</span>
+                            <p class="txt-descricao">
+                                CNPJ: 38.330.776/0001-42
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
 
         <!-- STORIES -->
         <section id="stories" class="stories-container"></section>
@@ -293,6 +366,165 @@
             btnHorario.className = 'social-btn-t-fechado';
             disp.innerHTML = "FECHADO";
             btnHorario.appendChild(disp);
+        }
+
+
+
+        let widthPage = window.innerWidth
+        console.log(widthPage);
+
+        function ajustarTela(){
+            widthPage = window.innerWidth;
+            ativarRelogio(widthPage);
+
+        }
+
+        var data = new Date();
+        var dia = data.getDay();            // 0-6
+        var hora = data.getHours();         // 0-23
+        var min = data.getMinutes();        // 0-59
+
+        const relogio = document.querySelector("#relogio");
+
+        var diaAberto = '';
+        var abrir = (hora*60) + min;
+        var fechar = (hora*60) + min;
+
+        var horarioAbrir = 18 * 60;           // 18h00 -> 1080m + 0m
+        var horariroFechar = (22 * 60) + 30;  // 22h30 -> 1320m + 30m 
+        
+        switch(dia){
+            case 0:
+                diaAberto = '#domingo';
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 1:
+                diaAberto = '#segunda';
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 2:
+                diaAberto = '#terca';
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 3:
+                diaAberto = '#quarta';
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 4:
+                diaAberto = '#quinta';
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 5:
+                diaAberto = '#sexta';
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 6:
+                diaAberto = '#sabado';
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;  
+        }
+    
+        ativarRelogio(widthPage);
+
+        function ativarRelogio(widthPage) {
+            console.log('teste');
+            if(widthPage < 600) {
+                if(dia == 0) {
+                    relogio.style.marginTop = "50px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 1) {
+                    /* SEGUNDA - FECHADO */
+                    relogio.style.marginTop = "80px";
+                    relogio.className = "relogio-fechado";
+                } else if(dia == 2) {
+                    relogio.style.marginTop = "110px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 3) {
+                    relogio.style.marginTop = "140px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 4) {
+                    relogio.style.marginTop = "170px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 5) {
+                    relogio.style.marginTop = "200px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 6) {
+                    relogio.style.marginTop = "230px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } 
+            } else {
+                if(dia == 0) {
+                    relogio.style.marginTop = "45px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 1) {
+                     /* SEGUNDA - FECHADO */
+                     relogio.style.marginTop = "80px";
+                    relogio.className = "relogio-fechado";
+                } else if(dia == 2) {
+                    relogio.style.marginTop = "115px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 3) {
+                    relogio.style.marginTop = "150px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 4) {
+                    relogio.style.marginTop = "185px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 5) {
+                    relogio.style.marginTop = "220px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } else if(dia == 6) {
+                    relogio.style.marginTop = "225px";
+                    if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                        relogio.className = "relogio-aberto";
+                    } else {
+                        relogio.className = "relogio-fechado";
+                    }
+                } 
+            }
         }
 
     </script>
