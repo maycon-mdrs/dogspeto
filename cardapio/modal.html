@@ -95,8 +95,6 @@
         let widthPage = window.innerWidth
         console.log(widthPage);
 
-        ativarRelogio(widthPage);
-
         function ajustarTela(){
             widthPage = window.innerWidth;
             ativarRelogio(widthPage);
@@ -148,8 +146,10 @@
                 break;  
         }
     
+        ativarRelogio(widthPage);
 
         function ativarRelogio(widthPage) {
+            console.log('teste');
             if(widthPage < 600) {
                 if(dia == 0) {
                     relogio.style.marginTop = "50px";
