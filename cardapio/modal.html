@@ -25,10 +25,6 @@
     <div class="modal" id="modal">
         <div class="modal-content">
 
-            <div id="relogio">
-                <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
-            </div>
-
            <span style="color: white;" class="close-btn" onclick="hiddenModal()">&times;</span>
            <div class="label">
                 <div class="titulo">
@@ -46,10 +42,16 @@
                         <span class="txt-horario" style="color: #B6212B; font-weight: bold;">FECHADO</span>
                     </div>
                     <div class="txt-dia" id="terca">
+                        <div id="relogio">
+                            <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                        </div>
                         <span>TERÇA</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
                     <div class="txt-dia" id="quarta">
+                        <div id="relogio">
+                            <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                        </div>
                         <span>QUARTA</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
@@ -145,9 +147,10 @@
                 document.querySelector(diaAberto).style.fontWeight = "bold";
                 break;  
         }
-    
+        
+        dia=4
         ativarRelogio(widthPage);
-
+        
         function ativarRelogio(widthPage) {
             console.log('teste');
             if(widthPage < 600) {
@@ -163,7 +166,7 @@
                     relogio.style.marginTop = "80px";
                     relogio.className = "relogio-fechado";
                 } else if(dia == 2) {
-                    relogio.style.marginTop = "110px";
+                    //relogio.style.marginTop = "110px";
                     if(abrir >= horarioAbrir && fechar <= horariroFechar) {
                         relogio.className = "relogio-aberto";
                     } else {
@@ -211,21 +214,21 @@
                      relogio.style.marginTop = "80px";
                     relogio.className = "relogio-fechado";
                 } else if(dia == 2) {
-                    relogio.style.marginTop = "115px";
+                    //relogio.style.marginTop = "112px";
                     if(abrir >= horarioAbrir && fechar <= horariroFechar) {
                         relogio.className = "relogio-aberto";
                     } else {
                         relogio.className = "relogio-fechado";
                     }
                 } else if(dia == 3) {
-                    relogio.style.marginTop = "150px";
+                    //relogio.style.marginTop = "150px";
                     if(abrir >= horarioAbrir && fechar <= horariroFechar) {
                         relogio.className = "relogio-aberto";
                     } else {
                         relogio.className = "relogio-fechado";
                     }
                 } else if(dia == 4) {
-                    relogio.style.marginTop = "185px";
+                    //relogio.style.marginTop = "180px";
                     if(abrir >= horarioAbrir && fechar <= horariroFechar) {
                         relogio.className = "relogio-aberto";
                     } else {
