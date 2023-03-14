@@ -107,25 +107,27 @@ body {
     color: #B6212B;
 }
 
-#relogio {
-    position: absolute;
-    height: 18px;
-    opacity: 0;
-    visibility: hidden;
-}
-#relogio.active {
-    opacity: 1;
-    visibility: visible;
-}
 .relogio-fechado {
     position: absolute;
     height: 18px;
     color: #B6212B;
+    opacity: 0;
+    visibility: hidden;
+}
+.relogio-fechado.active {
+    opacity: 1;
+    visibility: visible;
 }
 .relogio-aberto {
     position: absolute;
     height: 18px;
     color: #6AE35F;
+    opacity: 0;
+    visibility: hidden;
+}
+.relogio-aberto.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 @media (max-width: 600px) {

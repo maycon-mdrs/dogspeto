@@ -33,37 +33,79 @@
             </div>
             <section class="content">
                 <div class="horarios">
+                    <!-- DOMIGO -->
                     <div class="txt-dia" id="domingo">
+                        <!-- relógio -->
+                        <div class="relogio-fechado">
+                            <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                        </div>
+                        <!-- Horário -->
                         <span>DOMIGO</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
+
+                    <!-- SEGUNDA -->
                     <div class="txt-dia" id="segunda">
+                        <!-- relógio -->
+                        <div class="relogio-fechado">
+                            <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                        </div>
+                        <!-- Horário -->
                         <span style="color: #B6212B; font-weight: bold;">SEGUNDA</span>
                         <span class="txt-horario" style="color: #B6212B; font-weight: bold;">FECHADO</span>
                     </div>
+
+                    <!-- TERÇA -->
                     <div class="txt-dia" id="terca">
-                        <div id="relogio">
+                        <!-- relógio -->
+                        <div class="relogio-fechado">
                             <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
                         </div>
+                        <!-- Horário -->
                         <span>TERÇA</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
+
+                    <!-- QUARTA -->
                     <div class="txt-dia" id="quarta">
-                        <div id="relogio">
+                        <!-- relógio -->
+                        <div class="relogio-fechado">
                             <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
                         </div>
+                        <!-- Horário -->
                         <span>QUARTA</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
+
+                    <!-- QUINTA -->
                     <div class="txt-dia" id="quinta">
+                        <!-- relógio -->
+                        <div class="relogio-fechado">
+                            <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                        </div>
+                        <!-- Horário -->
                         <span>QUINTA</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
+
+                    <!-- SEXTA -->
                     <div class="txt-dia" id="sexta">
+                        <!-- relógio -->
+                        <div class="relogio-fechado">
+                            <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                        </div>
+                        <!-- Horário -->
                         <span>SEXTA</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
+
+                    <!-- SÁBADO -->
                     <div class="txt-dia" id="sabado">
+                        <!-- relógio -->
+                        <div class="relogio-fechado">
+                            <iconify-icon icon="mdi:clock-time-three" width="18" height="18"></iconify-icon>
+                        </div>
+                        <!-- Horário -->
                         <span>SÁBADO</span>
                         <span class="txt-horario">18:00 às 22:30</span>
                     </div>
@@ -108,7 +150,7 @@
         var hora = data.getHours();         // 0-23
         var min = data.getMinutes();        // 0-59
 
-        const relogio = document.querySelector("#relogio");
+        const relogio = document.querySelectorAll(".relogio-fechado");
 
         var diaAberto = '';
         var abrir = (hora*60) + min;
@@ -148,18 +190,18 @@
                 break;  
         }
         
-        dia=4
+        dia=2
         ativarRelogio(widthPage);
         
         function ativarRelogio(widthPage) {
             console.log('teste');
             if(widthPage < 600) {
                 if(dia == 0) {
-                    relogio.style.marginTop = "50px";
+                    //relogio.style.marginTop = "50px";
                     if(abrir >= horarioAbrir && fechar <= horariroFechar) {
-                        relogio.className = "relogio-aberto";
+                        relogio.className = "relogio-aberto active";
                     } else {
-                        relogio.className = "relogio-fechado";
+                        relogio.className = "relogio-fechado active";
                     }
                 } else if(dia == 1) {
                     /* SEGUNDA - FECHADO */
@@ -172,6 +214,7 @@
                     } else {
                         relogio.className = "relogio-fechado";
                     }
+                    console.log('terça')
                 } else if(dia == 3) {
                     relogio.style.marginTop = "140px";
                     if(abrir >= horarioAbrir && fechar <= horariroFechar) {
