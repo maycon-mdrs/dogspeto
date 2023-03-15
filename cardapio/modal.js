@@ -31,11 +31,11 @@ function closeModalOutside(modal, body) {
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
-          modal.classList.remove("show-modal");
+            modal.classList.remove("show-modal");
+            /* "DESBLOCK" SROLL */
+            body.style.overflow = "auto";
         }
       }
-    /* "DESBLOCK" SROLL */
-    body.style.overflow = "auto";
 }
 
 /* ---------------------------------------------------------- */
