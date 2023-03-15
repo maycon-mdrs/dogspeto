@@ -131,7 +131,7 @@
     /* ------------------------------------------- */
     .stories-container {
         width: 100%;
-        gap: 32px;
+        gap: 5px;
     }
     /* HIDDEN - scrollbar */
     .stories-container::-webkit-scrollbar {
