@@ -101,7 +101,7 @@
 /* Descrição */
 .accordion .contentBx .content p {
     text-align: justify;
-    letter-spacing: 0;
+    letter-spacing: 0.1px; 
     margin: 10px 0px;
     padding: 0;
 }
