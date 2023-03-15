@@ -80,10 +80,11 @@
 }
 
 .informacoes .info .txt-titulo {
-    font-size: 12px;
+    font-size: 14px;
 } 
 .txt-descricao {
-    font-size: 12px;
+    font-size: 14px;
+    text-align: justify;
 }
 
 .informacoes {
@@ -143,10 +144,10 @@ iconify-icon{
     }
     
     .informacoes .info .txt-titulo {
-        font-size: 10px;
+        font-size: 11px;
     } 
     .txt-descricao {
-        font-size: 10px;
+        font-size: 11px;
     }
     .informacoes {
         padding: 46px 0px 0px 20px;
