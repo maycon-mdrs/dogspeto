@@ -101,18 +101,6 @@
 /* ---------------------------------- */
 /* ---------- RESPONSIVIDADE -------- */
 /* ---------------------------------- */
-@media (max-width: 600px){
-    /* HIDDEN - scrollbar */
-    .stories-container::-webkit-scrollbar {
-        display: none;
-    } 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .stories-container {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;     /* Firefox */
-    }
-}
-
 @media (max-width: 800px) {
     /* ------------------------------------------- */
     /* ------------- SECTION STORIES ------------- */
@@ -137,3 +125,22 @@
         width: 110px;
     }
 }
+@media (max-width: 600px){
+    /* ------------------------------------------- */
+    /* ------------- SECTION STORIES ------------- */
+    /* ------------------------------------------- */
+    .stories-container {
+        width: 100%;
+        gap: 32px;
+    }
+    /* HIDDEN - scrollbar */
+    .stories-container::-webkit-scrollbar {
+        display: none;
+    } 
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .stories-container {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;     /* Firefox */
+    }
+}
+

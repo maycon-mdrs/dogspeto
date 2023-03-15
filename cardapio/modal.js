@@ -43,9 +43,14 @@ function closeModalOutside(modal, body) {
 /* ---------------------------------------------------------- */
 
 let widthPage = window.innerWidth
-console.log(widthPage);
+//ajustarStories(widthPage);
 
 function ajustarTela(){
     widthPage = window.innerWidth;
-    console.log(widthPage);
+    //ajustarStories(widthPage);
 }
+
+function ajustarStories(widthPage) {
+    const storiesContainer= document.querySelector(".stories-container");
+    storiesContainer.style.width =(widthPage-10) + "px";
+} 
