@@ -84,11 +84,15 @@
 
 /* DETLALHES - produto */
 .content-text {
-    padding: 0 0 0 10px;
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 /* TITULO - VALOR (PRODUTO) */
 .h6 {
+    font-size: 16px;
     font-weight: bold;
     margin: 0;
     padding: 0;

@@ -36,8 +36,6 @@
     <link rel="icon" type="image/x-icon" sizes="194x194" href="/images/logo-2.png">
 
     <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
@@ -45,14 +43,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/cardapio/styles/style-stories.css">
     <link rel="stylesheet" href="/cardapio/styles/style-products.css">
+    <link rel="stylesheet" href="/cardapio/styles/style-modal.css">
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>   
 
+    <script src="modal.js"></script>
     <title>DogSpeto - Cardápio</title>
 </head>
 
-<body>
+<body onresize="ajustarTela()">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55RQQJJ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -61,7 +62,6 @@
     <main class="main-text">
 
         <!-- MENU -->
-       
 
         <!-- HEADER - LOGO -->
         <header class="container-header">
@@ -70,12 +70,10 @@
 
         <!-- BUTTON HORARIO -->
         <section id="horario" class="container-section">
-            <div>
-                <a href="#">
+                <a onclick="showModal()">
                     <button type="button" id="btn-horario" class="social-btn-t-fechado">
                     </button>
                 </a>
-            </div>
         </section>
 
         <!-- STORIES -->
@@ -98,7 +96,9 @@
         import {combos} from "/cardapio/lista-produtos/combos.js"        // 5
         import {bebidas} from "/cardapio/lista-produtos/bebidas.js"      // 6
         import {extras} from "/cardapio/lista-produtos/extras.js"        // 7
-        
+        import {dias} from "/cardapio/regras/dias.js"                           // DIAS DA SEMANA
+        import {infos} from "/cardapio/regras/info.js"
+
 
         /* ---------------------------------------------------------- */
         /* ------------------ DRAG TO SCROLLING x ------------------- */
@@ -131,7 +131,7 @@
             const walk = (x - startX) * 3; //scroll-fast
             slider.scrollLeft = scrollLeft - walk;
             //console.log(walk);
-        });
+        });    
 
         /* ---------------------------------------------------------- */
         /* ---------- CRIANDO DINAMICAMENTE HTML - STORIES ---------- */
@@ -294,7 +294,201 @@
             disp.innerHTML = "FECHADO";
             btnHorario.appendChild(disp);
         }
+
+        /* ---------------------------------------------------------- */
+        /* ----------- CRIANDO DINAMICAMENTE HTML - MODAL ----------- */
+        /* ---------------------------------------------------------- */
+
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+        modal.id = "modal";
+
+        main.appendChild(modal);
+
+        const modalContent = document.createElement("div");
+        modalContent.classList.add("modal-content"); 
+
+        const closeBtn = document.createElement("span");
+        closeBtn.classList.add("close-btn");
+        closeBtn.setAttribute("onclick", "hiddenModal()");
+        closeBtn.style.color = "white";
+        closeBtn.innerHTML = "×";
+
+        const labelModal = document.createElement("div");
+        labelModal.classList.add("label");
+
+        const tituloLabelModal = document.createElement("div");
+        tituloLabelModal.classList.add("titulo");
+
+        const txtTitulo = document.createElement("span");
+        txtTitulo.classList.add("txt-titulo");
+        txtTitulo.innerHTML = "HORÁRIO";
+
+        const contetnModalSection = document.createElement("section");
+        contetnModalSection.classList.add("content");
+
+        const horariosModal = document.createElement("div");
+        horariosModal.classList.add("horarios");
+
+        modal.appendChild(modalContent);    
+            modalContent.appendChild(closeBtn);
+            modalContent.appendChild(labelModal);
+                labelModal.appendChild(tituloLabelModal);
+                    tituloLabelModal.appendChild(txtTitulo);
+            modalContent.appendChild(contetnModalSection);
+                contetnModalSection.appendChild(horariosModal);
+                    dias.forEach(d => {
+                        const txtDia = document.createElement("div");
+                        txtDia.classList.add("txt-dia");
+                        txtDia.id = d.id;
+
+                        const relogioDiv = document.createElement("div");
+                        relogioDiv.className = "relogio-fechado";
+                        relogioDiv.id = d.relogio_id;
+
+                        const iconeRelogio = document.createElement("iconify-icon");
+                        iconeRelogio.setAttribute("icon", "mdi:clock-time-three");
+
+                        const diaSpan = document.createElement("span");
+                        diaSpan.innerHTML = d.dia;
+
+                        const horarioSpan = document.createElement("span");
+                        horarioSpan.classList.add("txt-horario");
+                        horarioSpan.innerHTML = d.horario;
+
+                        if(d.dia == "SEGUNDA"){
+                            diaSpan.style.fontWeight = "bold";
+                            diaSpan.style.color = "#B6212B";
+                            horarioSpan.style.fontWeight = "bold";
+                            horarioSpan.style.color = "#B6212B";
+                        }
+
+                        horariosModal.appendChild(txtDia);
+                            txtDia.appendChild(relogioDiv);
+                                relogioDiv.appendChild(iconeRelogio);
+                            txtDia.appendChild(diaSpan);
+                            txtDia.appendChild(horarioSpan);
+                    });
+            
+            const informacoesModal = document.createElement("div");
+            informacoesModal.classList.add("informacoes");
+
+            contetnModalSection.appendChild(informacoesModal);
+
+            infos.forEach(i => {
+                const info = document.createElement("div");
+                info.classList.add("info");
+
+                const txtTituloInfo = document.createElement("span")
+                txtTituloInfo.classList.add("txt-titulo");
+                txtTituloInfo.innerHTML = i.titulo;
+
+                const txtDescricaoInfo = document.createElement("p");
+                txtDescricaoInfo.classList.add("txt-descricao");
+                txtDescricaoInfo.innerHTML = i.descricao;
+
+                informacoesModal.appendChild(info);
+                    info.appendChild(txtTituloInfo);
+                    info.appendChild(txtDescricaoInfo);
+            });
+                    
+    
+        /* ---------------------------------------------------------- */
+        /* ------------- CONDICIONAIS - POSIÇÃO RELÓGIO ------------- */
+        /* ---------------------------------------------------------- */
+
+        var dia = data.getDay();            // 0-6
+
+        var diaAberto = '';
+        var relogioDia = '';
         
+        switch(dia){
+            case 0:
+                diaAberto = '#domingo';
+                relogioDia = '#relogio-domingo'
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 1:
+                diaAberto = '#segunda';
+                relogioDia = '#relogio-segunda'
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 2:
+                diaAberto = '#terca';
+                relogioDia = '#relogio-terca'
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 3:
+                diaAberto = '#quarta';
+                relogioDia = '#relogio-quarta'
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 4:
+                diaAberto = '#quinta';
+                relogioDia = '#relogio-quinta'
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 5:
+                diaAberto = '#sexta';
+                relogioDia = '#relogio-sexta'
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;
+            case 6:
+                diaAberto = '#sabado';
+                relogioDia = '#relogio-sabado'
+                document.querySelector(diaAberto).style.fontWeight = "bold";
+                break;  
+        }
+             
+        const relogio = document.querySelector(relogioDia);            
+        
+        if(dia == 0) {
+            /* DOMINGO */
+            if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                relogio.className = "relogio-aberto active";
+            } else {
+                relogio.className = "relogio-fechado active";
+            }
+        } else if(dia == 1) {
+            /* SEGUNDA - FECHADO */
+            relogio.className = "relogio-fechado active";
+        } else if(dia == 2) {
+            /* TERÇA */
+            if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                relogio.className = "relogio-aberto active";
+            } else {
+                relogio.className = "relogio-fechado active";
+            }
+        } else if(dia == 3) {
+            /* QUARTA */
+            if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                relogio.className = "relogio-aberto active";
+            } else {
+                relogio.className = "relogio-fechado active";
+            }
+        } else if(dia == 4) {
+            /* QUINTA */
+            if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                relogio.className = "relogio-aberto active";
+            } else {
+                relogio.className = "relogio-fechado active";
+            }
+        } else if(dia == 5) {
+            /* SEXTA */
+            if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                relogio.className = "relogio-aberto active";
+            } else {
+                relogio.className = "relogio-fechado active";
+            }
+        } else if(dia == 6) {
+            /* SÁBADO */
+            if(abrir >= horarioAbrir && fechar <= horariroFechar) {
+                relogio.className = "relogio-aberto active";
+            } else {
+                relogio.className = "relogio-fechado active";
+            }
+        } 
+    
     </script>
 </body>
 

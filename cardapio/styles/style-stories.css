@@ -42,7 +42,7 @@
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    z-index: 300;
+    /* z-index: 300; */
     vertical-align: middle;
 }
 

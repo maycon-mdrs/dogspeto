@@ -61,6 +61,7 @@ body {
     text-align: center;
 }
 #horario a button {
+    cursor: pointer;
     position: relative;
     display: flex;
     justify-content: center;
