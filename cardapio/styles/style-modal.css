@@ -46,8 +46,13 @@
 
 /* DIV - HORARIOS */
 .modal-content .content {
-    margin: 8px 0px 12px 0;
-    padding: 0px 25px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    margin: 0;
+    padding-right: 25px;
+    height: 480px;
 }
 
 /* TITULO - "HORÁRIO */
@@ -90,7 +95,7 @@
 .informacoes {
     display: flex;
     flex-direction: column;
-    padding: 80px 0px 0px 25px;
+    padding-left: 25px;
 }
 .informacoes .info {
     padding: 8px 0px;
@@ -126,13 +131,15 @@ iconify-icon{
 }
 
 @media (max-width: 600px) {
-    .content {
+    .modal-content .content {
         padding-right: 20px;
+        height: 370px;
     }
     .modal-content {
         width: 300px;
         height: 400px;
     }
+    /* DIV - HORARIOS */
     .titulo {
         margin-bottom: 8px;
     }
@@ -150,7 +157,7 @@ iconify-icon{
         font-size: 11px;
     }
     .informacoes {
-        padding: 40px 0px 0px 20px;
+        padding-left: 20px;
     }
     .informacoes .info {
         padding: 2px 0px;
