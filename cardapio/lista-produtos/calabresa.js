@@ -23,7 +23,7 @@ export const calabresa = [
         categoria: "🌭 HOT DOG - CALABRESA",
         id: "calabresa",
         imgProduct: "/cardapio/produtos/cheddar.jpg",
-        title: "RANGO, CHEDDAR E BACON",
+        title: "FRANGO, CHEDDAR E BACON",
         description: "Pão parmesão, linguiça calabresa fininha defumada, cebola agridoce, frango, cheddar, bacon e queijo mussarela maçaricada,",
         valor: "R$17,00"
     },
